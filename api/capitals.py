@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
 
         url = 'https://restcountries.com/v3.1/name/america'
         r = requests.get(url)
-        data = json.load(r.json())
+        data = r.json()
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
