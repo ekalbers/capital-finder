@@ -15,14 +15,14 @@ class handler(BaseHTTPRequestHandler):
         # dic = dict(query_string_list)
         # name = dic.get('name')
 
-        # url = 'https://restcountries.com/v3.1/name/america'
-        # r = requests.get(url)
-        # data = r.json()
+        url = 'https://restcountries.com/v3.1/name/america'
+        r = requests.get(url)
+        data = r.json()
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        message = 'Hello World'
+        message = f"The {data['name']['common']}"
         self.wfile.write(message.encode())
         return
 
