@@ -19,8 +19,6 @@ class handler(BaseHTTPRequestHandler):
         r = requests.get(url)
         data = r.json()
 
-        name = data['name']
-
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
