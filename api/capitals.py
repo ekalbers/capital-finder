@@ -23,5 +23,6 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         message = 'Hello World'
         self.wfile.write(message.encode())
+        return
 
 
